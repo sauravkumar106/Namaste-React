@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- <h1>Hello World</h1> -->
+
+        <div class="root">Not rendered yet</div>
+
+        <!-- Emmet 
+       div>div>h1 ==>
+       <div>
+        <div>
+            <h1></h1>
+        </div>
+       </div>
+      -->
+
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <SCript>
+        // creating a react element
+        const heading = React.createElement('h1', {}, "Namasate Everyone!");
+        /* 👆🏽
+                                               props object
+                                                we can pass the props object as the second argument
+                                                of the createElement method. The props object is an object
+                                                that contains the properties of the element.
+
+                                                like this 👇                                    
+                                                heading = React.createElement('h1', {
+                                                className: 'heading'
+                                                } ,"Namasate Everyone!");
+
+                                                or 
+
+                                                heading = React.createElement('h1', {
+                                                 id:'Tile'
+                                                  } ,"Namasate Everyone!");      
+                                              */
+
+        // taken three arguments 
+        // 1. type of element (h1, div, p, etc)
+        // 2. props (0bject)
+        // 3. children  (string or array of children)
+
+        console.log(heading);
+        // return the react object 
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        // passing the react element to the render method
+        root.render(heading);
+
+
+
+        // multiple elements 
+        const heading1 = React.createElement('h1', {
+                id: "title",
+            },
+            "Namasate Everyone!");
+
+        const heading2 = React.createElement('h2', {
+                id: "title",
+            },
+            "Namasateone!");
+
+        const container = React.createElement('div', {
+            id: "container",
+        }, [heading1,
+            heading2
+        ]);
+
+        root.render(container);
+    </SCript>
+    <!-- <script src="index.js"></script>     -->
+</body>
+
+</html>
